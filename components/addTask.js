@@ -26,7 +26,7 @@ export const addTask = (evento) => {
     value,
     dateFormat,
     complete,
-    id: uuid.v4()
+    id: uuid.v4(),
   };
 
   list.innerHTML = '';
@@ -46,7 +46,7 @@ export const createTask = ({ value, dateFormat, complete, id }) => {
 
   const check = checkComplete(id);
 
-  if(complete) {
+  if (complete) {
     console.log("completado");
     check.classList.toggle('fas');
     check.classList.toggle('completeIcon');
@@ -64,6 +64,6 @@ export const createTask = ({ value, dateFormat, complete, id }) => {
 
   task.appendChild(taskContent);
   task.appendChild(dateElement);
-  task.appendChild(deleteIcon());
+  task.appendChild(deleteIcon(id));
   return task;
 };
